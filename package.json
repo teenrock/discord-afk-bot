@@ -1,0 +1,27 @@
+{
+  "name": "discord-afk-bot",
+  "version": "1.0.0",
+  "description": "users afk mode bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xzdc",
+  "license": "ISC",
+  "dependencies": {
+    "decache": "^4.4.0",
+    "discord.js": "^11.4.2",
+    "events": "^3.0.0",
+    "fs-extra": "^7.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teenrock/discord-afk-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teenrock/discord-afk-bot/issues"
+  },
+  "homepage": "https://github.com/teenrock/discord-afk-bot#readme"
+}
