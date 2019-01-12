@@ -3,17 +3,14 @@ function afkUsersMode(message, prefix, client, fs, path, decache) {
   let command = message.content.split(' ')[0].slice(prefix.length);
   var isMentionned = message.mentions.members.first();
   var args = message.content.split(" ");
-  var NotAllowedChar = ["`", "``", "```", "\\"];
+  var notAllowedChar = ["`", "``", "```", "\\"];
   var afkMSG_pres = args.slice(1).join(" ");
 
   if (message.author.bot) return;
 
   if (message.content.startsWith(prefix + 'afk')) {
-    let msgchan = message.channel;
-    if (msgchan != command_chan) {
-      message.reply('cette commande est restreinte au salon : **' + command_chan+ '**\n Veuillez renouveler la commande sur ce salon.')
-    } else {
-    NotAllowedChar.some(word=> { // use restriction of markdown
+    
+    notAllowedChar.some(word=> { // use restriction of markdown
       if ((afkMSG_pres.startsWith(word))||(afkMSG_pres.includes(word))) {
         return message.reply(`cette commande ne permet pas l'utilsation de caractères spéciaux.\nVeuillez renouveler votre saisie sans caractères spécifiques.
 Si malgré tout vous n'y parvenez pas, vous pouvez essayer de réinitialiser votre profilà l'aide de la commande : **!afk reset**`);
@@ -57,7 +54,7 @@ Si malgré tout vous n'y parvenez pas, vous pouvez essayer de réinitialiser vot
     const afk = require("./functions/afk.js")
     afk(message, prefix, args, afkMSGpres, fs, path, decache)
   }
-  }
+  
   } // end of startsWith "!afk" command
 
   if (isMentionned) message.guild.members.forEach(member => { // For each member of guildMembers
@@ -123,7 +120,7 @@ Si malgré tout vous n'y parvenez pas, vous pouvez essayer de réinitialiser vot
 
   // Reset all users to default configuration
   
-    if ((message.content == (prefix + 'afk reset all')) && ((message.author.id == xzdc_id)||(message.author.id == xzdcdev_id))) {
+    if (message.content == (prefix + 'afk reset all')) {
 
         bot.users.forEach(user=>{
 

@@ -1,7 +1,4 @@
 function onReady(message, client) {
-  
-  command_chan = client.channels.get('496029671297908736');
-  xzdc = client.users.get('399094992338944012');
 
   var memberCount = client.users.size;
   var serverCount = client.guilds.size;
