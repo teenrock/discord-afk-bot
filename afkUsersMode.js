@@ -122,7 +122,7 @@ Si malgré tout vous n'y parvenez pas, vous pouvez essayer de réinitialiser vot
   
     if (message.content == (prefix + 'afk reset all')) {
 
-        bot.users.forEach(user=>{
+        client.users.forEach(user=>{
 
             var extension = '.js';
             var folderEmplacement_1 = path.resolve(__dirname, ("./users_config/afk_status/"));
